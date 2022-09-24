@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
 <title>Upsilon 22-23</title>
-<link rel="icon" type="image/png" href="src/upsilon-logo.png">
+<head>
+<link rel="icon" type="image/png" href="src/upsilon-logo.png" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap');
 
@@ -18,6 +18,33 @@ body {
      0px 0/ 40px 40px, 
     linear-gradient(45deg, #FCD4EC 25%, #FDE3F3 25%) 
      0px 0/ 40px 40px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #A42514;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: pink; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FDE3F3; 
+  border: 2px solid pink;
+}
+
+::selection {
+  color: white;
+  background: tomato;
 }
 
 .header {
@@ -77,8 +104,28 @@ body {
 }
 
 .class-officers table {
-  width: 100%;
+  width: 70%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
   font-family: 'Barlow';
+}
+
+.class-officers tr {
+  border-bottom: 1px solid #F67B81;
+}
+
+.class-officers td {
+  padding: 0.4rem;
+}
+
+.class-officers td:first-child {
+  color: #F67B81;
+}
+
+.class-officers td:last-child {
+  color: #A42514;
+  text-align: right;
 }
 
 .cleaners-group { 
@@ -88,6 +135,22 @@ body {
 .class-schedule { 
   grid-area: class-schedule; 
 }
+
+.class-schedule table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Barlow';
+  text-align: center;
+}
+
+.class-schedule td, th {
+  padding: 0.4rem;
+  border:  1px solid #F67B81;
+  color: #F67B81;
+}
+
 
 .class-policies { 
   grid-area: class-policies; 
@@ -111,15 +174,42 @@ body {
   <div class="class-officers">
     <h3>class officers</h3>
     <table>
-    <tr><td>President</td><td>Agan</td></tr>
-    <tr><td>Vice President</td><td>Javier</td></tr>
-    <tr><td>Secretary</td><td>Salazar</td></tr>
-    <tr><td>Treasurer</td><td>Barote</td></tr>
-    <tr><td>Auditor</td><td>Bongcawel</td></tr>
-    <tr><td>P.I.O.</td><td>Lagapa</td></tr>
-    <tr><td>Class Monitors</td><td>Ronquillo<br>Silva</td></tr>
-    <tr><td>Social Managers</td><td>Bacala<br>Biagcong</td></tr>
-    <tr><td>Sergeant at Arms</td><td>Filipinas<br>Takayama</td></tr>
+    <tr>
+      <td>President</td>
+      <td>Agan</td>
+    </tr>
+    <tr>
+      <td>Vice President</td>
+      <td>Javier</td>
+    </tr>
+    <tr>
+      <td>Secretary</td>
+      <td>Salazar</td>
+    </tr>
+    <tr>
+      <td>Treasurer</td>
+      <td>Barote</td>
+    </tr>
+    <tr>
+      <td>Auditor</td>
+      <td>Bongcawel</td>
+    </tr>
+    <tr>
+      <td>P.I.O.</td>
+      <td>Lagapa</td>
+    </tr>
+    <tr>
+      <td>Class Monitors</td>
+      <td>Ronquillo<br>Silva</td>
+    </tr>
+    <tr>
+      <td>Social Managers</td>
+      <td>Bacala<br>Biagcong</td>
+    </tr>
+    <tr style="border-bottom: none;">
+      <td>Sergeant at Arms</td>
+      <td>Filipinas<br>Takayama</td>
+    </tr>
     </table>
   </div>
   <div class="cleaners-group">
@@ -127,17 +217,31 @@ body {
   </div>
   <div class="class-schedule">
     <h3>class schedule</h3>
+    <table>
+      <thead>
+      <tr>
+      <th>TIME</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><td>7:30 AM - 8:30 AM  </td><td>MATH </td><td>PHILO</td><td rowspan="2">ENG</td><td rowspan="2">IT   </td><td>PHILO</td></tr>
+      <tr><td>8:30 AM - 9:30 AM  </td><td>PHILO</td><td>MATH </td>                                                  <td>ENG  </td></tr>
+      <tr><td>9:30 AM - 10:00 AM </td><td colspan="5">RECESS</td></tr>
+      <tr><td>10:00 AM - 11:00 AM</td><td>FIL  </td><td>ENG  </td><td rowspan="2"></td><td>PHILO            </td><td>MATH </td></tr>
+      <tr><td>11:00 AM - 12:00 NN</td><td>BIO  </td><td>PE   </td> <td>ENG              </td><td>IT   </td></tr>
+      <tr><td>12:00 NN - 1:00 PM </td><td colspan="5">LUNCH</td></tr>
+      <tr><td>1:00 PM - 2:00 PM  </td><td rowspan="2">STATS</td><td>FIL  </td><td rowspan="4"></td><td>FIL              </td><td>FIL  </td></tr>
+      <tr><td>2:00 PM - 3:00 PM  </td><td>IT   </td><td>PE               </td><td rowspan="2">BIO  </td></tr>
+      <tr><td>3:00 PM - 4:00 PM  </td><td>HRA  </td><td rowspan="2">STATS</td> <td rowspan="2">BIO  </td></tr>
+      <tr><td>4:00 PM - 5:00 PM  </td><td>     </td>   <td>     </td></tr>
+      </tbody>
+      </table>
   </div>
   <div class="class-policies">
     <h3>class policies</h3>
   </div>
 </div>
-
-<h1 >The iframe sandbox attribute</h1>
-
-<p style="font-family: 'Barlow', sans-serif;">The "Get date and time" button will run a script in the inline frame.</p>
-<p>Since the sandbox attribute is set, the content of the inline frame is not allowed to run scripts.</p>
-<p>You can add "allow-scripts" to the sandbox attribute, to allow the JavaScript to run.</p>
+<p></p>
 
 </body>
 </html>
