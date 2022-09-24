@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap');
+
+body {
+  margin: 0;
+  background-color: #FDE3F3;
+  background: 
+  	linear-gradient(135deg, #FCD4EC55 25%, transparent 25%) 
+     -20px 0/ 40px 40px, 
+    linear-gradient(225deg, #FCD4EC 25%, transparent 25%) 
+     -20px 0/ 40px 40px, 
+    linear-gradient(315deg, #FCD4EC55 25%, transparent 25%) 
+     0px 0/ 40px 40px, 
+    linear-gradient(45deg, #FCD4EC 25%, #FDE3F3 25%) 
+     0px 0/ 40px 40px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #A42514;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header h1 {
+  font-family: 'Barlow', sans-serif;
+  color: #FCD4EC;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  text-shadow: 0.2rem 0.2rem #DC605A;
+}
+
+.content {
+  margin-top: 7rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "quick-bio class-officers cleaners-group"
+    "class-policies class-officers cleaners-group"
+    "class-policies class-schedule class-schedule";
+}
+
+.content h3 {
+  font-family: 'Barlow', sans-serif;
+  color: #F67B81;
+  text-decoration: underline;
+  text-decoration-thickness: 50%;
+}
+
+.content div {
+  padding: 0.4rem;
+  border: 5px pink solid;
+  border-radius: 10px;
+  background-color: #FCD4EC;
+}
+
+.quick-bio { 
+  grid-area: quick-bio; 
+}
+
+.class-officers { 
+  grid-area: class-officers; 
+}
+
+.class-officers table {
+  width: 100%;
+  font-family: 'Barlow';
+}
+
+.cleaners-group { 
+  grid-area: cleaners-group; 
+}
+
+.class-schedule { 
+  grid-area: class-schedule; 
+}
+
+.class-policies { 
+  grid-area: class-policies; 
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="./src/hornet-logo-pinker.png" width="75" height="75" />
+  <h1>Upsilon 22-23</h1>
+  <h1>11 STEM</h1>
+</div>
+
+<div class="content">
+  <div class="quick-bio">
+    <h3>quick bio</h3>
+  </div>
+  <div class="class-officers">
+    <h3>class officers</h3>
+    <table>
+    <tr><td>President</td><td>Agan</td></tr>
+    <tr><td>Vice President</td><td>Javier</td></tr>
+    <tr><td>Secretary</td><td>Salazar</td></tr>
+    <tr><td>Treasurer</td><td>Barote</td></tr>
+    <tr><td>Auditor</td><td>Bongcawel</td></tr>
+    <tr><td>P.I.O.</td><td>Lagapa</td></tr>
+    <tr><td>Class Monitors</td><td>Ronquillo<br>Silva</td></tr>
+    <tr><td>Social Managers</td><td>Bacala<br>Biagcong</td></tr>
+    <tr><td>Sergeant at Arms</td><td>Filipinas<br>Takayama</td></tr>
+    </table>
+  </div>
+  <div class="cleaners-group">
+    <h3>cleaners group</h3>
+  </div>
+  <div class="class-schedule">
+    <h3>class schedule</h3>
+  </div>
+  <div class="class-policies">
+    <h3>class policies</h3>
+  </div>
+</div>
+
+<h1 >The iframe sandbox attribute</h1>
+
+<p style="font-family: 'Barlow', sans-serif;">The "Get date and time" button will run a script in the inline frame.</p>
+<p>Since the sandbox attribute is set, the content of the inline frame is not allowed to run scripts.</p>
+<p>You can add "allow-scripts" to the sandbox attribute, to allow the JavaScript to run.</p>
+
+</body>
+</html>
