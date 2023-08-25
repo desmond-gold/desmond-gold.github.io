@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<title>Fornax 23-24</title>
+<head>
+<link rel="icon" type="image/png" href="src/fornax-logo.png" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap');
+
+:root {
+  --maroon-color: #A42514;
+  --darker-maroon-color: #800000;
+}
+
+body {
+  margin: 0;
+  background-color: var(--darker-maroon-color);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--maroon-color);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: pink; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FDE3F3; 
+  border: 2px solid pink;
+}
+
+::selection {
+  color: white;
+  background: tomato;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 16px;
+  background-color: var(--maroon-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header h1 {
+  font-family: 'Barlow', sans-serif;
+  color: #FCD4EC;
+  text-align: center;
+  letter-spacing: 0.2vw;
+  text-shadow: 0.2vw 0.2vw #DC605A;
+}
+
+.content {
+  margin-top: 7rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.content h3 {
+  font-family: 'Barlow', sans-serif;
+  color: #F67B81;
+  text-decoration: underline;
+  text-decoration-thickness: 50%;
+}
+
+.content .section {
+  padding: 0.4rem;
+  border: 5px pink solid;
+  border-radius: 10px;
+  background-color: #FCD4EC;
+  margin-bottom: 0.5rem;
+}
+
+.content img {
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 5px;
+  border-radius: 1%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="src/hornet-logo-pinker.png" width="75" height="75" />
+  <h1>Fornax 23-24</h1>
+  <a href="https://drive.google.com/drive/folders/1dreTDCGtQ8bsUIHkZlchb0zln5I7Pe6P?usp=drive_link">
+    <img src="src/google-drive-icon.png" width="50" height="50" />
+  </a>
+</div>
+
+<div class="content">
+<img src="src/fornax-welcome.png" />
+<img src="src/fornax-class-officers.png" />
+<img src="src/fornax-class-sched.png" />
+<img src="src/fornax-tba.png" />
+</div>
+</body>
+</html>
