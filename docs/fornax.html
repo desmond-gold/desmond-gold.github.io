@@ -7,11 +7,17 @@
 <meta http-equiv='expires' content='0' /> 
 <meta http-equiv='pragma' content='no-cache' />
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?
+
+family=Barlow:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
 
 :root {
   --maroon-color: #A42514;
+  --section-maroon-color: #7B0A0A;
   --darker-maroon-color: #800000;
+  --lighter-maroon-color: #BD3E3E;
+  --gold-color: #D18A2B;
 }
 
 body {
@@ -46,6 +52,18 @@ body {
   background: tomato;
 }
 
+/* Handle on hover */
+.spoiler {
+  background-color: var(--gold-color);
+  border-radius: 5%;
+  text-shadow: none;
+}
+
+.spoiler:hover {
+  background-color: transparent;
+  text-shadow: inherit;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -55,6 +73,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 100;
 }
 
 .header h1 {
@@ -73,17 +92,50 @@ body {
 
 .content h3 {
   font-family: 'Barlow', sans-serif;
-  color: #F67B81;
-  text-decoration: underline;
-  text-decoration-thickness: 50%;
+  color: var (--gold-color);
+}
+
+.content .birthday-section {
+  padding: 0.4rem;
+  border-radius: 1%;
+background: radial-gradient(at bottom right, #7b0a0a 0, #7b0a0a 12.5px, rgba
+
+(123,10,10,0.2) 12.5px, rgba(123,10,10,0.2) 25px, rgba(123,10,10,0.75) 25px, rgba
+
+(123,10,10,0.75) 37.5px, rgba(123,10,10,0.25) 37.5px, rgba(123,10,10,0.25) 50px, rgba
+
+(123,10,10,0.3) 50px, rgba(123,10,10,0.3) 62.5px, rgba(123,10,10,0.75) 62.5px, rgba
+
+(123,10,10,0.75) 75px, rgba(123,10,10,0.2) 75px, rgba(123,10,10,0.2) 87.5px, 
+
+transparent 87.5px, transparent 100px), radial-gradient(at top left, transparent 0, 
+
+transparent 12.5px, rgba(123,10,10,0.2) 12.5px, rgba(123,10,10,0.2) 25px, rgba
+
+(123,10,10,0.75) 25px, rgba(123,10,10,0.75) 37.5px, rgba(123,10,10,0.3) 37.5px, rgba
+
+(123,10,10,0.3) 50px, rgba(123,10,10,0.25) 50px, rgba(123,10,10,0.25) 62.5px, rgba
+
+(123,10,10,0.75) 62.5px, rgba(123,10,10,0.75) 75px, rgba(123,10,10,0.2) 75px, rgba
+
+(123,10,10,0.2) 87.5px, #7b0a0a 87.5px, #7b0a0a 100px, transparent 100px, transparent 
+
+250px);
+background-blend-mode: multiply;
+background-size: 100px 100px, 100px 100px;
+background-color: #800000;
+  margin-bottom: 0.5rem;
+  font-family: 'Rakkas', sans-serif;
+  color: var(--gold-color);
 }
 
 .content .section {
   padding: 0.4rem;
-  border: 5px pink solid;
-  border-radius: 10px;
-  background-color: #FCD4EC;
+  border-radius: 1%;
+  background-color: var(--section-maroon-color);
   margin-bottom: 0.5rem;
+  font-family: 'Rakkas', sans-serif;
+  color: var(--gold-color);
 }
 
 .content img {
@@ -95,6 +147,50 @@ body {
   border-radius: 1%;
 }
 
+.hscroll-menu {
+  padding: 0.4rem;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  overflow: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.hscroll-menu .hscroll-menu-item {
+  width: 30rem;
+  height: 25rem;
+  display: inline-block;
+  padding: 0.5rem 1rem 1rem 1rem;
+  border-radius: 10px;
+  border: 5px solid var(--gold-color);
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.birthday-section .charify-text {
+  line-height: 100%;
+}
+
+.charify-text {
+  color: var(--gold-color); 
+  text-shadow: 2px 2px black; 
+  font-weight: 400;
+  line-height: 50%;
+}
+
+.hscroll-menu .hscroll-menu-item img {
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 5%;
+  background-color: var(--maroon-color);
+  border: 2px solid black;
+}
+
 </style>
 </head>
 <body>
@@ -102,27 +198,442 @@ body {
 <div class="header">
   <img src="src/hornet-logo-pinker.png" width="75" height="75" />
   <h1>Fornax 23-24</h1>
-  <a href="https://drive.google.com/drive/folders/1dreTDCGtQ8bsUIHkZlchb0zln5I7Pe6P?usp=drive_link">
+  <a href="https://drive.google.com/drive/folders/1dreTDCGtQ8bsUIHkZlchb0zln5I7Pe6P?
+
+usp=drive_link">
     <img src="src/google-drive-icon.png" width="50" height="50" />
   </a>
 </div>
 
 <div class="content">
-<img src="src/fornax-welcome.png" />
+<div id="add-maybe-birthday-here">
+</div>
 <img src="src/fornax-announcement-header.png" />
 <p align="center">
   <iframe src="https://docs.google.com/document/d/e/2PACX-
 
-1vSx8_C8Sc5ypuNzkOzY4sr4rpVeqnS_rMsqf3ZdYy9okCNepDY0MesaArM3MBCOdAuOIAVPTB1dvuR
+1vSx8_C8Sc5ypuNzkOzY4sr4rpVeqnS_rMsqf3ZdYy9okCNepDY0MesaArM3MBCOdAuOIAVPTB1dvuRC/pub?
 
-C/pub?embedded=true" 
+embedded=true" 
           frameborder="0" width="70%" height="500px"></iframe>
 </p>
 <img src="src/fornax-seat-plan.png" />
+<img src="src/fornax-people-header.png" />
+<div class="section">
+<div class="hscroll-menu" id="add-fornax-people-here">
+</div>
+</div>
 <img src="src/fornax-class-sched.png" />
 <img src="src/fornax-cleaners.png" />
 <img src="src/fornax-class-officers.png" />
+<img src="src/fornax-events-header.png" />
+<img src="src/fornax-event-bnw.png" />
 </div>
+
+<script>
+const people = {
+  "count" : 37,
+  "adviser": {
+    "first-name"  : "Alma Gloria",
+    "middle-name" : "Loable",
+    "last-name"   : "Silva"
+  },
+  "students": [
+    {
+      "last-name"   : "Acedo",
+      "first-name"  : "Denise Mikhaela",
+      "middle-name" : "Sumagang",
+      "birth-year"  : 2005,
+      "birth-month" : "May",
+      "birth-month-code" : 5,
+      "birth-day"   : 19
+    },
+    {
+      "last-name"   : "Agan",
+      "first-name"  : "Chariz Desiree",
+      "middle-name" : "Ocariza",
+      "birth-year"  : 2005,
+      "birth-month" : "August",
+      "birth-month-code" : 8,
+      "birth-day"   : 19
+    },
+    {
+      "last-name"   : "Angulo",
+      "first-name"  : "Marvin Gabriel",
+      "middle-name" : "Bernal",
+      "birth-year"  : 2006,
+      "birth-month" : "February",
+      "birth-month-code" : 2,
+      "birth-day"   : 10
+    },
+    {
+      "last-name"   : "Atienda",
+      "first-name"  : "Tom Kloeh",
+      "middle-name" : "Jumamil",
+      "birth-year"  : 2005,
+      "birth-month" : "October",
+      "birth-month-code" : 10,
+      "birth-day"   : 25
+    },
+    {
+      "last-name"   : "Bacala",
+      "first-name"  : "Hannah Grace",
+      "middle-name" : "Chua",
+      "birth-year"  : 2005,
+      "birth-month" : "October",
+      "birth-month-code" : 10,
+      "birth-day"   : 10
+    },
+    {
+      "last-name"   : "Barote",
+      "first-name"  : "Aliya Karol",
+      "middle-name" : "Lahoylahoy",
+      "birth-year"  : 2006,
+      "birth-month" : "April",
+      "birth-month-code" : 4,
+      "birth-day"   : 20
+    },
+    {
+      "last-name"   : "Berioso",
+      "first-name"  : "Cherlyn Chris",
+      "middle-name" : "Renegado",
+      "birth-year"  : 2005,
+      "birth-month" : "December",
+      "birth-month-code" : 12,
+      "birth-day"   : 16
+    },
+    {
+      "last-name"   : "Biagcong",
+      "first-name"  : "Ethan Gaelic",
+      "middle-name" : "Lacaran",
+      "birth-year"  : 2004,
+      "birth-month" : "October",
+      "birth-month-code" : 10,
+      "birth-day"   : 24
+    },
+    {
+      "last-name"   : "Bongcawel",
+      "first-name"  : "Desmond Gold",
+      "middle-name" : "Gayloa",
+      "birth-year"  : 2005,
+      "birth-month" : "September",
+      "birth-month-code" : 9,
+      "birth-day"   : 22
+    },
+    {
+      "last-name"   : "Boniao",
+      "first-name"  : "Josh",
+      "middle-name" : "Campomanes",
+      "birth-year"  : 2005,
+      "birth-month" : "December",
+      "birth-month-code" : 12,
+      "birth-day"   : 5
+    },
+    {
+      "last-name"   : "Cagula",
+      "first-name"  : "Maester Guille",
+      "middle-name" : "Abreu",
+      "birth-year"  : 2006,
+      "birth-month" : "June",
+      "birth-month-code" : 6,
+      "birth-day"   : 27
+    },
+    {
+      "last-name"   : "Campos",
+      "first-name"  : "Joceal Anne",
+      "middle-name" : "Balbao",
+      "birth-year"  : 2006,
+      "birth-month" : "April",
+      "birth-month-code" : 4,
+      "birth-day"   : 7
+    },
+    {
+      "last-name"   : "Escueta",
+      "first-name"  : "Sam Gabriel",
+      "middle-name" : "Orquillas",
+      "birth-year"  : 2005,
+      "birth-month" : "November",
+      "birth-month-code" : 11,
+      "birth-day"   : 8
+    },
+    {
+      "last-name"   : "Filipinas",
+      "first-name"  : "Theus Edwin Gift",
+      "middle-name" : "Clarin",
+      "birth-year"  : 2005,
+      "birth-month" : "January",
+      "birth-month-code" : 1,
+      "birth-day"   : 25
+    },
+    {
+      "last-name"   : "Gutierrez",
+      "first-name"  : "John Michael",
+      "middle-name" : "Alensunorin",
+      "birth-year"  : 2005,
+      "birth-month" : "April",
+      "birth-month-code" : 4,
+      "birth-day"   : 23
+    },
+    {
+      "last-name"   : "Hussain",
+      "first-name"  : "Yazheed",
+      "middle-name" : "Hassan",
+      "birth-year"  : 2005,
+      "birth-month" : "July",
+      "birth-month-code" : 7,
+      "birth-day"   : 28
+    },
+    {
+      "last-name"   : "Javier",
+      "first-name"  : "Felipe IV",
+      "middle-name" : "Barsumo",
+      "birth-year"  : 2004,
+      "birth-month" : "October",
+      "birth-month-code" : 10,
+      "birth-day"   : 23
+    },
+    {
+      "last-name"   : "Lagapa",
+      "first-name"  : "Kieran Francis Benedict",
+      "middle-name" : "Samson",
+      "birth-year"  : 2005,
+      "birth-month" : "February",
+      "birth-month-code" : 2,
+      "birth-day"   : 24
+    },
+    {
+      "last-name"   : "Laut",
+      "first-name"  : "Salihnor",
+      "middle-name" : "Hadji Ali",
+      "birth-year"  : 2005,
+      "birth-month" : "August",
+      "birth-month-code" : 8,
+      "birth-day"   : 4
+    },
+    {
+      "last-name"   : "Macalimbon",
+      "first-name"  : "Al-Muhami Salahuddin",
+      "middle-name" : "Macabangun",
+      "birth-year"  : 2005,
+      "birth-month" : "December",
+      "birth-month-code" : 12,
+      "birth-day"   : 21
+    },
+    {
+      "last-name"   : "Maghamil",
+      "first-name"  : "Niño Kristoffer",
+      "middle-name" : "Aurita",
+      "birth-year"  : 2006,
+      "birth-month" : "January",
+      "birth-month-code" : 1,
+      "birth-day"   : 14
+    },
+    {
+      "last-name"   : "Manaros",
+      "first-name"  : "Amer Al-Sayyef",
+      "middle-name" : "Bagro",
+      "birth-year"  : 2006,
+      "birth-month" : "August",
+      "birth-month-code" : 8,
+      "birth-day"   : 13
+    },
+    {
+      "last-name"   : "Manaytay",
+      "first-name"  : "Lovely Ann",
+      "middle-name" : "Jariolne",
+      "birth-year"  : 2006,
+      "birth-month" : "January",
+      "birth-month-code" : 1,
+      "birth-day"   : 9
+    },
+    {
+      "last-name"   : "Morales",
+      "first-name"  : "Erika Grace",
+      "middle-name" : "Positos",
+      "birth-year"  : 2005,
+      "birth-month" : "March",
+      "birth-month-code" : 3,
+      "birth-day"   : 11
+    },
+    {
+      "last-name"   : "Nacasabog",
+      "first-name"  : "Joshua",
+      "middle-name" : "Nabua",
+      "birth-year"  : 2005,
+      "birth-month" : "November",
+      "birth-month-code" : 11,
+      "birth-day"   : 10
+    },
+    {
+      "last-name"   : "Pabayo",
+      "first-name"  : "Hannah Pauleen",
+      "middle-name" : "Gacita",
+      "birth-year"  : 2005,
+      "birth-month" : "July",
+      "birth-month-code" : 7,
+      "birth-day"   : 28
+    },
+    {
+      "last-name"   : "Pacho",
+      "first-name"  : "Glezelle Dawn",
+      "middle-name" : "Padayhag",
+      "birth-year"  : 2006,
+      "birth-month" : "July",
+      "birth-month-code" : 7,
+      "birth-day"   : 7
+    },
+    {
+      "last-name"   : "Pernia",
+      "first-name"  : "Ritchel Lean",
+      "middle-name" : "Aguirre",
+      "birth-year"  : 2005,
+      "birth-month" : "November",
+      "birth-month-code" : 11,
+      "birth-day"   : 16
+    },
+    {
+      "last-name"   : "Ricaplaza",
+      "first-name"  : "Ma. Gerlen",
+      "middle-name" : "Madregallejo",
+      "birth-year"  : 2005,
+      "birth-month" : "February",
+      "birth-month-code" : 2,
+      "birth-day"   : 5
+    },
+    {
+      "last-name"   : "Ronquillo",
+      "first-name"  : "Alana Chloe",
+      "middle-name" : "Acaylar",
+      "birth-year"  : 2005,
+      "birth-month" : "May",
+      "birth-month-code" : 5,
+      "birth-day"   : 12
+    },
+    {
+      "last-name"   : "Sabdani",
+      "first-name"  : "Kate Ashley",
+      "middle-name" : "Daminar",
+      "birth-year"  : 2005,
+      "birth-month" : "November",
+      "birth-month-code" : 11,
+      "birth-day"   : 5
+    },
+    {
+      "last-name"   : "Salazar",
+      "first-name"  : "Hannah Mae",
+      "middle-name" : "Cabeguin",
+      "birth-year"  : 2005,
+      "birth-month" : "August",
+      "birth-month-code" : 8,
+      "birth-day"   : 26
+    },
+    {
+      "last-name"   : "Silva",
+      "first-name"  : "Anja Denyze",
+      "middle-name" : "Loable",
+      "birth-year"  : 2006,
+      "birth-month" : "May",
+      "birth-month-code" : 5,
+      "birth-day"   : 16
+    },
+    {
+      "last-name"   : "Sumando",
+      "first-name"  : "Jhonna Marie Nikole",
+      "middle-name" : "Pasco",
+      "birth-year"  : 2005,
+      "birth-month" : "February",
+      "birth-month-code" : 2,
+      "birth-day"   : 19
+    },
+    {
+      "last-name"   : "Taron",
+      "first-name"  : "Allynn John",
+      "middle-name" : "Maquiling",
+      "birth-year"  : 2006,
+      "birth-month" : "January",
+      "birth-month-code" : 1,
+      "birth-day"   : 26
+    },
+    {
+      "last-name"   : "Tomenio",
+      "first-name"  : "Sam",
+      "middle-name" : "Booc",
+      "birth-year"  : 2005,
+      "birth-month" : "December",
+      "birth-month-code" : 12,
+      "birth-day"   : 3
+    },
+    {
+      "last-name"   : "Venus",
+      "first-name"  : "Aaron Geone",
+      "middle-name" : "Tejana",
+      "birth-year"  : 2005,
+      "birth-month" : "June",
+      "birth-month-code" : 6,
+      "birth-day"   : 7
+    }
+  ]
+};
+
+function init() {
+  var content = "";
+  var index   = 0;
+
+  const current_date = new Date ();
+  var birthday_index = -1;
   
+  for (student of people ['students']) {
+    ++index;
+    content += `
+      <div class="hscroll-menu-item">
+        <h1 class="charify-text">#${index} ${student['last-name']}</h1>
+        <img src="src/fornax-people/${student['last-name'].toLowerCase()}.png" />
+        <h2 class="charify-text">${student['first-name']}</h2>
+        <h3 class="charify-text">Middle Name: <span class="spoiler">${student['middle-
+
+name']}</span></h3>
+        <h3 class="charify-text">Birthday: <span class="spoiler">${student['birth-
+
+month']} ${student['birth-day']}, ${student['birth-year']}</span></h3>
+      </div>
+    `;
+    const birth_month = student['birth-month-code'];
+    const birth_day   = student['birth-day'];
+    if (current_date.getMonth() + 1 === birth_month &&
+        current_date.getDate()  === birth_day) {
+      if (birthday_index == -1)
+        birthday_index = index - 1;
+    }
+  }
+
+  document.getElementById("add-fornax-people-here").insertAdjacentHTML('beforeend', 
+
+content);
+
+  if (birthday_index != -1) {
+    const student = people['students'][birthday_index];
+    document.getElementById("add-maybe-birthday-here").insertAdjacentHTML(
+      'afterbegin', `
+        <div class="birthday-section">
+	<h1 class="charify-text" style="font-size: 500%; text-align: center;">
+	  Happy Birthday ${student['first-name']}!
+        </h1>
+        <img src="src/fornax-people/${student['last-name'].toLowerCase()}.png" 
+	     style="width: 15%; height: 15%;"/ >
+        <h2 class="charify-text" style="font-size: 200%; text-align: center;">
+	  ${current_date.getFullYear() - student['birth-year']} years old 
+	  na daw siya oh :>
+	</h2>
+        </div>
+       `
+    );
+  }
+
+}
+
+init();
+
+</script>
+
 </body>
 </html>
