@@ -587,12 +587,8 @@ function init() {
         <h1 class="charify-text">#${index} ${student['last-name']}</h1>
         <img src="src/fornax-people/${student['last-name'].toLowerCase()}.png" />
         <h2 class="charify-text">${student['first-name']}</h2>
-        <h3 class="charify-text">Middle Name: <span class="spoiler">${student['middle-
-
-name']}</span></h3>
-        <h3 class="charify-text">Birthday: <span class="spoiler">${student['birth-
-
-month']} ${student['birth-day']}, ${student['birth-year']}</span></h3>
+        <h3 class="charify-text">Middle Name: <span class="spoiler">${student['middle-name']}</span></h3>
+        <h3 class="charify-text">Birthday: <span class="spoiler">${student['birth-month']} ${student['birth-day']}, ${student['birth-year']}</span></h3>
       </div>
     `;
     const birth_month = student['birth-month-code'];
@@ -604,9 +600,7 @@ month']} ${student['birth-day']}, ${student['birth-year']}</span></h3>
     }
   }
 
-  document.getElementById("add-fornax-people-here").insertAdjacentHTML('beforeend', 
-
-content);
+  document.getElementById("add-fornax-people-here").insertAdjacentHTML('beforeend', content);
 
   if (birthday_index != -1) {
     const student = people['students'][birthday_index];
